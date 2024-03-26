@@ -16,7 +16,9 @@ import {
 } from '@coreui/react'
 import CIcon from '@coreui/icons-react'
 import {
+  cilApplications,
   cilBell,
+  cilCalendar,
   cilContrast,
   cilEnvelopeOpen,
   cilList,
@@ -51,19 +53,19 @@ const AppHeader = () => {
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
-        <CHeaderNav className="d-none d-md-flex">
-          <CNavItem>
-            <CNavLink to="/dashboard" as={NavLink}>
-              Dashboard
-            </CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Users</CNavLink>
-          </CNavItem>
-          <CNavItem>
-            <CNavLink href="#">Settings</CNavLink>
-          </CNavItem>
-        </CHeaderNav>
+        <CHeaderNav className="d-none d-md-flex justify-content-center align-items-center">
+        <input
+          type="text"
+          placeholder="Search..."
+          style={{
+            width: '100vh',
+            border: '1px solid #ced4da',
+            borderRadius: '0.25rem',
+            padding: '6px'
+          }}
+        />
+        <CIcon icon="cilSearch" />
+    </CHeaderNav>
         <CHeaderNav className="ms-auto">
           <CNavItem>
             <CNavLink href="#">
@@ -72,12 +74,12 @@ const AppHeader = () => {
           </CNavItem>
           <CNavItem>
             <CNavLink href="#">
-              <CIcon icon={cilList} size="lg" />
+              <CIcon icon={cilCalendar} size="lg" />
             </CNavLink>
           </CNavItem>
           <CNavItem>
             <CNavLink href="#">
-              <CIcon icon={cilEnvelopeOpen} size="lg" />
+              <CIcon icon={cilApplications} size="lg" />
             </CNavLink>
           </CNavItem>
         </CHeaderNav>
@@ -131,10 +133,8 @@ const AppHeader = () => {
           <AppHeaderDropdown />
         </CHeaderNav>
       </CContainer>
-      <CContainer className="px-4" fluid>
-        <AppBreadcrumb />
-      </CContainer>
     </CHeader>
+    
   )
 }
 
